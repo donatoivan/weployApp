@@ -38,16 +38,20 @@ class Timesheet < ApplicationRecord
 
   def calculate_m_w_f
     if start_time.to_s(:time).to_time >= "07:00".to_time && finish_time.to_s(:time).to_time <= "19:00".to_time
+      #if start and finish time are within 7AM - 7PM
       self.amount = (((self.finish_time - self.start_time) / 60.0) / 60.0) * 22
     elsif start_time.to_s(:time).to_time < "07:00".to_time && finish_time.to_s(:time).to_time <= "19:00".to_time
+      #if start time is before 7AM && finish time is before 7pm
       extra = ((("07:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 33
       normal = (((self.finish_time.to_s(:time).to_time - "07:00".to_time) / 60.0) / 60.0) * 22
       self.amount = extra + normal
     elsif start_time.to_s(:time).to_time >= "07:00".to_time && finish_time.to_s(:time).to_time > "19:00".to_time
+      #if start time is after or equal to 7AM && finish time is after 7PM
       extra = (((self.finish_time.to_s(:time).to_time - "19:00".to_time) / 60.0) / 60.0) * 33
       normal = ((("19:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 22
       self.amount = extra + normal
     elsif start_time.to_s(:time).to_time < "07:00".to_time && finish_time.to_s(:time).to_time > "19:00".to_time
+      #if start and finish are beyoind 7AM - 7PM
       extra_before = ((("07:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 33
       extra_after = (((self.finish_time.to_s(:time).to_time - "19:00".to_time) / 60.0) / 60.0) * 33
       normal = ((("19:00".to_time - "07:00".to_time) / 60) / 60) * 22
@@ -57,16 +61,20 @@ class Timesheet < ApplicationRecord
 
   def calculate_tue_thu
     if start_time.to_s(:time).to_time >= "05:00".to_time && finish_time.to_s(:time).to_time <= "17:00".to_time
+      #if start and finish time are within 5AM - 5PM
       self.amount = (((self.finish_time - self.start_time) / 60.0) / 60.0) * 25
     elsif start_time.to_s(:time).to_time < "05:00".to_time && finish_time.to_s(:time).to_time <= "17:00".to_time
+      #if start time is before 5AM && finish time is before 5pm
       extra = ((("05:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 35
       normal = (((self.finish_time.to_s(:time).to_time - "05:00".to_time) / 60.0) / 60.0) * 25
       self.amount = extra + normal
     elsif start_time.to_s(:time).to_time >= "05:00".to_time && finish_time.to_s(:time).to_time > "17:00".to_time
+      #if start time is after or equal to 5AM && finish time is after 5PM
       extra = (((self.finish_time.to_s(:time).to_time - "17:00".to_time) / 60.0) / 60.0) * 35
       normal = ((("17:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 25
       self.amount = extra + normal
     elsif start_time.to_s(:time).to_time < "05:00".to_time && finish_time.to_s(:time).to_time > "17:00".to_time
+      #if start and finish are beyoind 5AM - 5PM
       extra_before = ((("05:00".to_time - self.start_time.to_s(:time).to_time) / 60.0) / 60.0) * 35
       extra_after = (((self.finish_time.to_s(:time).to_time - "17:00".to_time) / 60.0) / 60.0) * 35
       normal = ((("17:00".to_time - "05:00".to_time) / 60) / 60) * 25
