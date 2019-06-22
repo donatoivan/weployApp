@@ -1,0 +1,23 @@
+<%= link_to 'Create Timesheet Entry', new_timesheet_path, class: 'ui button' %>
+<h1 class="timesheets-title">Timesheets</h1>
+<table class="ui inverted table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time Start</th>
+      <th>Time Finish</th>
+      <th>Calculated Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @timesheets.each do |timesheet| %>
+
+    <tr>
+      <td><%= timesheet.date.strftime('%d-%m-%Y') %></td>
+      <td><%= timesheet.start_time.to_s(:time) %></td>
+      <td><%= timesheet.finish_time.to_s(:time) %></td>
+      <td><%= '%.2f' % timesheet.amount %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

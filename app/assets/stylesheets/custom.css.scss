@@ -1,0 +1,76 @@
+@import "semantic-ui";
+
+.new-timesheet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#error-explanation {
+  background: red;
+}
+.within-finish {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  font-size: 17px;
+}
+
+#timesheet_start_time_4i {
+  height: 100%;
+  width: 12%;
+}
+
+#timesheet_start_time_5i {
+  height: 100%;
+  width: 12%;
+}
+
+#timesheet_finish_time_4i {
+  height: 100%;
+  width: 12%;
+}
+
+#timesheet_finish_time_5i {
+  height: 100%;
+  width: 12%;
+}
+
+.field_with_errors {
+  width: 100%;
+  display: flex;
+}
+
+.ui.inverted.table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+thead {
+  text-align: center;
+}
+
+tbody {
+  text-align: center;
+}
+
+.timesheets-title {
+  text-align: center;
+}
+
+.dropdown select {
+
+  // border: 0 !important;  /*Removes border*/
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  // -moz-appearance: none; /* Removes Default Firefox style*/
+  // background: url('dropdown_arrow.png') no-repeat;  /*Adds background-image*/
+  // background-position: 82px 7px;  /*Position of the background-image*/
+  // width: 100px; /*Width of select dropdown to give space for arrow image*/
+  // text-indent: 0.01px; /* Removes default arrow from firefox*/
+  // text-overflow: "";  /*Removes default arrow from firefox*/
+
+  /*My custom style for fonts*/
+
+  color: #1455a2;
+}

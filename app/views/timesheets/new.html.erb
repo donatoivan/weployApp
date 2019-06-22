@@ -1,0 +1,44 @@
+<div class="new-timesheet container">
+  <div class="ui raised very padded text container segment">
+    <%= form_with model: @timesheet, class: "ui form", local: true do |form| %>
+    
+      <% if @timesheet.errors.any? %>
+        <div id="error-explanation">
+          <h2>
+            <%= pluralize(@timesheet.errors.count, "error") %> prohibited
+            this Timesheet from being saved:
+          </h2>
+          <ul>
+            <% @timesheet.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="field">
+        <%= form.label :date %><br>
+        <%= form.date_field :date %>
+      </div>
+    
+      <div class="field">
+        <%= form.label "Start Time (24 hour)" %><br>
+        <div class="within-finish"> 
+          <%= form.time_select :start_time %>
+        </div>
+      </div>
+
+      <div class="field finish">
+        <%= form.label "Finish Time (24 hour)" %><br>
+        <div class="within-finish"> 
+          <%= form.time_select :finish_time %>
+        </div>
+      </div>
+    
+      <p>
+        <%= form.submit 'Create', class: "ui button" %>
+      </p>
+    
+    <% end %>
+  </div>
+</div>
