@@ -10,6 +10,7 @@
 #error-explanation {
   background: red;
 }
+
 .within-finish {
   display: flex;
   height: 40px;
@@ -57,20 +58,4 @@ tbody {
 
 .timesheets-title {
   text-align: center;
-}
-
-.dropdown select {
-
-  // border: 0 !important;  /*Removes border*/
-  -webkit-appearance: none;  /*Removes default chrome and safari style*/
-  // -moz-appearance: none; /* Removes Default Firefox style*/
-  // background: url('dropdown_arrow.png') no-repeat;  /*Adds background-image*/
-  // background-position: 82px 7px;  /*Position of the background-image*/
-  // width: 100px; /*Width of select dropdown to give space for arrow image*/
-  // text-indent: 0.01px; /* Removes default arrow from firefox*/
-  // text-overflow: "";  /*Removes default arrow from firefox*/
-
-  /*My custom style for fonts*/
-
-  color: #1455a2;
 }

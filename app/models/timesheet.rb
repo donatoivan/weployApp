@@ -37,7 +37,6 @@ class Timesheet < ApplicationRecord
   end
 
   def calculate_m_w_f
-    # raise
     if start_time.to_s(:time).to_time >= "07:00".to_time && finish_time.to_s(:time).to_time <= "19:00".to_time
       self.amount = (((self.finish_time - self.start_time) / 60.0) / 60.0) * 22
     elsif start_time.to_s(:time).to_time < "07:00".to_time && finish_time.to_s(:time).to_time <= "19:00".to_time
