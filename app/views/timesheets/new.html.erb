@@ -4,7 +4,7 @@
     
       <% if @timesheet.errors.any? %>
         <div id="error-explanation">
-          <h2>
+          <h2 class="header">
             <%= pluralize(@timesheet.errors.count, "error") %> prohibited
             this Timesheet from being saved:
           </h2>
@@ -24,14 +24,14 @@
       <div class="field">
         <%= form.label "Start Time (24 hour)" %><br>
         <div class="within-finish"> 
-          <%= form.time_select :start_time %>
+          <%= form.time_select :start_time, class: "minimal" %>
         </div>
       </div>
 
       <div class="field finish">
         <%= form.label "Finish Time (24 hour)" %><br>
         <div class="within-finish"> 
-          <%= form.time_select :finish_time %>
+          <%= form.time_select :finish_time, class: "minimal" %>
         </div>
       </div>
     

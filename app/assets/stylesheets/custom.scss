@@ -8,7 +8,14 @@
 }
 
 #error-explanation {
-  background: red;
+  background: #fff6f6;
+  border: 1px solid #e0b4b4;
+  border-radius: 4px;
+  color: #3F3f3f
+}
+
+.header {
+  color: #3F3f3f
 }
 
 .within-finish {
@@ -38,6 +45,10 @@
   width: 12%;
 }
 
+#timesheet_date {
+  height: 40px;
+}
+
 .field_with_errors {
   width: 100%;
   display: flex;
@@ -58,4 +69,9 @@ tbody {
 
 .timesheets-title {
   text-align: center;
+}
+
+#top-left-button {
+  margin-left: 30px;
+  margin-top: 30px;
 }
